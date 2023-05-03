@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Запись в салон красоты</h1>
+    <!-- 
+        имя, номер телефона, мэйл, выберите услугу, желамая дата время, комментарий. 
+     -->
+     <form>
+        <label for="name">Имя:</label>
+        <input type="text" id="name" placeholder="Введите ваше имя" required>
+
+        <label for="phone">Телефон:</label>
+        <input type="phone" id="phone" placeholder="Введите номер телефона" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Введите Ваш Email:" required>
+
+        <label for="service">Услуга</label>
+        <select name="service" id="service" required>
+            <option value="">Выберите услугу</option>
+            <option value="manicure">Маникюр</option>
+            <option value="lashes">Уход за ресницами</option>
+            <option value="hairStyle">Парикмахерские услуги</option>
+            <option value="makeUp">Макияж</option>
+            <option value="massage">Массаж</option>
+        </select>
+        <label for="date">Дата и время</label>
+        <div class="date">
+            <input type="date" id="date">
+            <input type="time" id="time">
+        </div>
+
+        <!-- <label for="time">Время</label> -->
+
+        <label for="comment">Комментарий</label>
+        <textarea name="comment"
+                  id="comment"
+                  rows="5"
+                  placeholder="Оставьте свой комментарий к записи"
+        ></textarea>
+        <div class="button">
+            <input type="submit" name="Записаться" id="submit">
+            <input type="reset" name="Отменить" id="reset">     
+        </div>
+     </form>
+</body>
+</html>
