@@ -28,9 +28,10 @@ function luckyNumber(x){
     // TODO
     // если нечётное, то середину делим добавляем в обе половины
     let string = x + '';
-    let mid = string.length % 2 == 0 ? string.length / 2 : Math.round(string.length / 2);
-    let left = string.length % 2 == 0 ? string.substring(0, mid) : string.substring(0, mid); 
-    let right = string.length % 2 == 0 ? string.substring(mid) : string.substring(mid-1);
+    let mid = Math.round(string.length / 2);
+    let isEven = string.length % 2 == 0 ? true : false;
+    let left = isEven ? string.substring(0, mid) : string.substring(0, mid); 
+    let right = isEven ? string.substring(mid) : string.substring(mid-1);
     let leftSum = sumDigits(left);
     let rightSum = sumDigits(right);
     return leftSum == rightSum;
@@ -45,3 +46,11 @@ function banana(){
     return string.toLowerCase();
 }
 console.log(banana());
+
+function no(){
+    let o = 'o'
+    let no = ('' + (+o)).charAt(0) + o;
+    return no;
+}
+
+console.log(no());
