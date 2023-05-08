@@ -24,9 +24,10 @@ const t2 = setInterval(printTime, 500);
 
 function printTime() {
     const date = new Date();
-    const hour = date.getHours();
+    const hour = date.getHours() > 9 ? date.getMinutes : + ('0' + date.getHours);
+    // перед скобками ставим + чтоб было всё таки чтисло, а не строка
     const min = date.getMinutes();
-    const sec = date.getSeconds();
+    const sec = date.getSeconds() > 9 ? date.getSeconds : + ('0' + date.getSeconds);
 
     const timeBox = document.getElementById('timeBox');
     const newTime = document.createElement('p');
