@@ -29,7 +29,7 @@ do {
             }
         }
     
-        if(notExist){
+        if(notExist && ibsnNew != null && titleNew != null && authorNew != null && yearNew != null){
             const  book = new Book(ibsnNew, titleNew, authorNew, yearNew);
             library.push(book);
         }    
