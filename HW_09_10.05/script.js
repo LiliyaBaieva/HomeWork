@@ -10,44 +10,50 @@
 
 
 const library = [];
-let inputData;
-do {
+let inputData = prompt('Enter book data separate by ";" ');
+// do {
+//     inputData = prompt('Enter book data separate by ";" ');
+//     if(inputData != ''){
+//         let ibsnNew = inputData.substring(0, inputData.indexOf(';'));
+//         inputData = inputData.substring(ibsnNew.length + 1);
+//         let titleNew = inputData.substring(0, inputData.indexOf(';'));
+//         inputData = inputData.substring(titleNew.length + 1);
+//         let authorNew = inputData.substring(0, inputData.indexOf(';'));
+//         let yearNew = inputData.substring(authorNew.length + 1);
+    
+//         let notExist = true;
+//         for(let i = 0; i < library.length; ++i){
+//             if(ibsnNew == library[i].isbn){
+//                 notExist = false;
+//                 // console.log('This book already exist.')
+//             }
+//         }
+    
+//         if(notExist && ibsnNew != null && titleNew != null && authorNew != null && yearNew != null){
+//             const  book = new Book(ibsnNew, titleNew, authorNew, yearNew);
+//             library.push(book);
+//         }    
+//     }
+// } while(inputData)    
+
+while(inputData){
+    const [isbn, title, author, year] = inputData.split(';');
+    if(inputData.split(';').length === 4 &&
+        isbn && title && author && year && 
+        findBook(library, isbn) === -1){
+        const book = new Book(isbn, title, author, year);
+        library.push(book);
+    }
     inputData = prompt('Enter book data separate by ";" ');
-    if(inputData != ''){
-        let ibsnNew = inputData.substring(0, inputData.indexOf(';'));
-        inputData = inputData.substring(ibsnNew.length + 1);
-        let titleNew = inputData.substring(0, inputData.indexOf(';'));
-        inputData = inputData.substring(titleNew.length + 1);
-        let authorNew = inputData.substring(0, inputData.indexOf(';'));
-        let yearNew = inputData.substring(authorNew.length + 1);
-    
-        let notExist = true;
-        for(let i = 0; i < library.length; ++i){
-            if(ibsnNew == library[i].isbn){
-                notExist = false;
-                // console.log('This book already exist.')
-            }
-        }
-    
-        if(notExist && ibsnNew != null && titleNew != null && authorNew != null && yearNew != null){
-            const  book = new Book(ibsnNew, titleNew, authorNew, yearNew);
-            library.push(book);
-        }    
-    }
-} while(inputData)    
+}
 
-let isbnAsked = prompt('Enter ISBN of book');
-printLibrary(isbnAsked);
+printLibrary(library);
 
 
-function printLibrary(isbnAsked){
-    let index = '-1';
+function printLibrary(library){
     for(let i = 0; i < library.length; i++){
-        if(isbnAsked == library[i].isbn){
-            index = i;
-        } 
+        console.log(library[i].toString());
     }
-    return console.log(index);
 }
 
 function Book(isbn, title, author, year){
@@ -58,4 +64,13 @@ function Book(isbn, title, author, year){
     this.toString = function(){
         return `ISBN: ${this.isbn}, Title: ${this.title}, Author: ${this.author}, Year of publishing: ${this.year}`;
     }
+}
+
+function findBook(library, isbn){
+    for(let i = 0; i < library.length; i++){
+        if(library[i].isbn === isbn){
+            return i;
+        }
+    }
+    return -1;
 }
