@@ -4,31 +4,31 @@
 // and a method for checking the balance.
 
 let sum = 500;
-const balanceResult = customers.reduce((sum, customers) => sum + customers.balance);
+const cashFlow = customers.reduce((sum, customers) => sum + customers.balance);
 
 const customers = [
     {
         accNum: 367689,
         name: 'Vanessa',
-        balance: balanceResult,
+        balance: cashFlow,
         viewBalance: () => {console.log(balance);}
     },
     {
         accNum: 392789,
         name: 'Daniel',
-        balance: balanceResult,
+        balance: cashFlow,
         viewBalance: () => {console.log(balance);}
     },
     {
         accNum: 367279,
         name: 'Maria',
-        balance: balanceResult,
+        balance: cashFlow,
         viewBalance: () => {console.log(balance);}
     },
     {
         accNum: 369089,
         name: 'Rubbi',
-        balanceStart: balanceResult,
+        balanceStart: cashFlow,
         viewBalance: () => {console.log(balance);}
     }
 ];
