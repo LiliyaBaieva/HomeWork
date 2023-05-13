@@ -69,10 +69,10 @@ Object.entries(bankAccaunt);
 console.log(res);
 
 
+bankAccaunt.checkBalance(); // просматриваем баланс
+bankAccaunt.deposit(500); //кладем деньги
 bankAccaunt.checkBalance();
-bankAccaunt.deposit(500);
+bankAccaunt.withdrow(700); //снимаем деньги
 bankAccaunt.checkBalance();
-bankAccaunt.withdrow(700);
-bankAccaunt.checkBalance();
-bankAccaunt.withdrow(1000);
+bankAccaunt.withdrow(1000); //снимаем больше чем есть
 bankAccaunt.checkBalance();
