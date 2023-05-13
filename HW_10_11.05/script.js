@@ -61,6 +61,14 @@ const bankAccaunt = {
     }
 }
 
+let res = Object.keys(bankAccaunt);
+console.log(res);
+const [number, userName, balance] = Object.values(bankAccaunt);
+console.log(number, userName, balance);
+Object.entries(bankAccaunt);
+console.log(res);
+
+
 bankAccaunt.checkBalance();
 bankAccaunt.deposit(500);
 bankAccaunt.checkBalance();
