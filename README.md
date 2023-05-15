@@ -9,3 +9,4 @@
 - [HW_08_08.05](https://github.com/LiliyaBaieva/HomeWork/tree/main/HW_08_08.05)
 - [HW_09_10.05](https://github.com/LiliyaBaieva/HomeWork/tree/main/HW_09_10.05)
 - [HW_10_11.05](https://github.com/LiliyaBaieva/HomeWork/tree/main/HW_10_11.05)
+- [HW_12_15.05](https://github.com/LiliyaBaieva/12_JS_ToDo_15.05)
